@@ -3,9 +3,9 @@ import { Title } from './components/Title';
 import { Balance } from './components/Balance';
 import { Accounts } from './components/Accounts';
 import { History } from './components/History';
-// import { Transactions } from './components/Transactions';
+import { Transactions } from './components/Transactions';
 
-// import { GlobalProvider } from './context/GlobalState';
+import { GlobalProvider } from './context/GlobalState';
 
 import './App.css';
 

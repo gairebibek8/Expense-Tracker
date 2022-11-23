@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
-import {GloabalContext} from '../context/GlobalState';
+import {GlobalContext} from '../context/GlobalState';
 
 export const Actions = () => {
   const[description, setDescription] = useState('')
   const[quantity, setQuantity] = useState(0)
 
-  const {addActions} = useContext(GloabalContext)
+  const {addActions} = useContext(GlobalContext)
 
   const onSubmit = e => {
     e.preventDefault();
@@ -15,6 +15,7 @@ export const Actions = () => {
         description,
         quantity: +quantity
     }
+
     addActions(newActions);
   }
 
