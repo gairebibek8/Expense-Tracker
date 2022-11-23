@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import {GlobalContext} from '../context/GlobalState';
 
-export const Actions = () => {
+export const Transactions = () => {
   const[description, setDescription] = useState('')
   const[quantity, setQuantity] = useState(0)
 
