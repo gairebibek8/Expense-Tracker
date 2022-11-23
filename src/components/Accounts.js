@@ -3,16 +3,16 @@ import { GlobalContext } from '../context/GlobalState';
 
 //Function that formats the money
 function money_format(number){
-  let p = number.toFix(2).split('.');
+  let p = number.toFixed(2).split('.');
   return(
-    '$' + (p[0].split('')[0]=== '-' ? '-' : '') +
+    '$' +
     p[0]
       .split('')
-      .reverse('')
+      .reverse()
       .reduce(function(acc, number, i, orig){
         return number === '-' ? acc : number + (i && !(i % 3) ? ',' : '') + acc;
       }, '') +
-      '-' +
+      '.' +
       p[1]
   );
 }
@@ -27,7 +27,7 @@ export const Accounts = () => {
   .reduce((acc, item) => (acc += item), 0);
 
   const sub = (
-    quantities.filter(item => item > 0).reduce((acc, item) => (acc += item), 0) * -1
+    quantities.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1
   );
 
   return (

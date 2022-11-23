@@ -30,8 +30,8 @@ export const Transactions = () => {
                 </div>
                 <div className="form-control">
                     <label htmlFor="quantity">Quantity 
-                    <br>A negative quantity will be accounted for an expense.</br>
-                    <br>A positive quantity will be accounted for as income.</br>
+                    <p>A negative quantity will be accounted for an expense.</p>
+                    <p>A positive quantity will be accounted for as income.</p>
                     </label>
                     <input type="number" value ={quantity} onChange={(e) => setQuantity(e.target.value)} placeholder="Enter your transaction's quantity."/>
                 </div>
