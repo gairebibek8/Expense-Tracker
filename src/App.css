@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 
 :root {
   --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -12,22 +12,30 @@ body {
   background-color: rgb(62, 62, 197);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   min-height: 100vh;
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Oxygen', sans-serif;
   color: white;
 }
 
 .container {
-  margin: 30px auto;
   width: 350px;
+  float: right;
+  margin-right: 300px;
+}
+
+.form-container {
+  width: 350px;
+  float: left;
+  margin-left: 300px;
 }
 
 h1 {
   letter-spacing: 1px;
   margin: 0;
+  text-align: center;
 }
 
 h3 {
@@ -58,6 +66,13 @@ h4 {
 
 .accounts-container > div:first-of-type {
   border-right: 1px solid #dedede;
+}
+
+.form-container {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
 }
 
 .money {
