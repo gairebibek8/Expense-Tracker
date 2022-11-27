@@ -1,21 +1,8 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
+import { numberWithCommas } from '../Reuse/format';
 
-//Function that formats the money
-function money_format(number){
-  let p = number.toFixed(2).split('.');
-  return(
-    '$' + (p[0].split('')[0]=== '-' ? '-' : '') +
-    p[0]
-      .split('')
-      .reverse('')
-      .reduce(function(acc, number, i, orig){
-        return number === '-' ? acc : number + (i && !(i % 3) ? ',' : '') + acc;
-      }, '') +
-      '.' +
-      p[1]
-  );
-}
+
 
 export const Balance = () => {
   const { actions } = useContext(GlobalContext);
@@ -27,7 +14,7 @@ export const Balance = () => {
   return (
     <>
         <h2>Your Current Balance</h2>
-        <h2>{(money_format(sum))}</h2>
+        <h2>${numberWithCommas(sum)}</h2>
     </>
   )
 }

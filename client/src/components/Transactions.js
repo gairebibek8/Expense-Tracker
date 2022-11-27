@@ -2,10 +2,10 @@ import React, { useContext, useState } from 'react'
 import {GlobalContext} from '../context/GlobalState';
 
 export const Transactions = () => {
-  const[description, setDescription] = useState('')
-  const[quantity, setQuantity] = useState(0)
+  const[description, setDescription] = useState('');
+  const[quantity, setQuantity] = useState(0);
 
-  const {addActions} = useContext(GlobalContext)
+  const {addActions} = useContext(GlobalContext);
 
   const onSubmit = e => {
     e.preventDefault();

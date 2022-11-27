@@ -1,18 +1,16 @@
-const Transactions = require("../model/Transactions");
-
-
+const Actions = require("../model/Transactions");
 
 // @desc     Get all transactions
 // @route    GET  /api/v1/transactions
 // @access   Public
-exports.getTransactions = async (req, res, next) => {
+exports.getActions = async (req, res, next) => {
     try {
-        const transactions = await Transactions.find();
+        const actions = await Actions.find();
 
         return res.status(200).json({
             success: true,
-            count: transactions.length,
-            data: transactions
+            count: actions.length,
+            data: actions
           });
         } catch (err) {
           return res.status(500).json({
@@ -26,15 +24,15 @@ exports.getTransactions = async (req, res, next) => {
 // @desc     Add transactions
 // @route    POST  /api/v1/transactions
 // @access   Public
-exports.addTransaction = async (req, res, next) => {
+exports.addActions = async (req, res, next) => {
     try {
         const { text, amount } = req.body;
     
-        const transactions = await Transactions.create(req.body);
+        const actions = await Actions.create(req.body);
       
         return res.status(201).json({
           success: true,
-          data: transactions
+          data: actions
         }); 
       } catch (err) {
         if(err.name === 'ValidationError') {
@@ -58,18 +56,18 @@ exports.addTransaction = async (req, res, next) => {
 // @desc     Delete transaction
 // @route    DELETE  /api/v1/transactions/:id
 // @access   Public
-exports.deleteTransaction = async (req, res, next) => {
+exports.deleteActions = async (req, res, next) => {
     try {
-        const transactions = await Transactions.findById(req.params.id);
+        const actions = await Actions.findById(req.params.id);
     
-        if(!transactions) {
+        if(!actions) {
           return res.status(404).json({
             success: false,
             error: 'No transaction found'
           });
         }
     
-        await transactions.remove();
+        await actions.remove();
     
         return res.status(200).json({
           success: true,
